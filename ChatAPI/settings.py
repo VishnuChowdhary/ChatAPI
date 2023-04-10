@@ -24,11 +24,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # new
+    'django.contrib.sites',
     
-    # Third Party APIS
+    # Third Party Apps
     'rest_framework',
     'corsheaders',
     'channels',
+    
+    # Authentication Apps
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    
+    # Internal Apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +140,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True 
+
+AUTH_USER_MODEL = 'users.MyUser'
+
+SITE_ID = 1
